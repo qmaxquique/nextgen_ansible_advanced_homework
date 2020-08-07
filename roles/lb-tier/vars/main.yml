@@ -1,1 +1,7 @@
+---
+# vars file for haproxy
+load_balancer_packages:
+  - haproxy
+
+# TODO: See what is this variable about
 payload: haproxy
