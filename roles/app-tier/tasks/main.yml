@@ -21,10 +21,12 @@
     src: index.html.j2
     dest: "{{ tomcat_web_root }}/index.html"
     mode: 0644
-
-- name: Create symlink to resolve tomcat java issue
-  file:
-    src: /usr/share/java/tomcat/extras/tomcat-juli.jar
-    dest: /usr/share/tomcat/bin/tomcat-juli.jar
-    state: link
   notify: restart "{{ app_server_service }}"
+
+# The code in below is needed when using this role in the 'multi-tier' env
+# - name: Create symlink to resolve tomcat java issue
+#   file:
+#     src: /usr/share/java/tomcat/extras/tomcat-juli.jar
+#     dest: /usr/share/tomcat/bin/tomcat-juli.jar
+#     state: link
+
