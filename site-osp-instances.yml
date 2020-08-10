@@ -1,18 +1,6 @@
----
 - hosts: localhost
   connection: local
-  become: false
+  become: no
   gather_facts: true
-  vars:
-    vms_data:
-      - { name: "app1", security_groups: ["apps"], meta: "group=apps,deployment_name=Dev"}
-      - { name: "app2", security_groups: ["apps"], meta: "group=apps,deployment_name=Dev"}
-      - { name: "database", security_groups: ["db"], meta: "group=appdbs,deployment_name=Dev"}
-      - { name: "frontend", security_groups: ["frontend"], meta: "group=frontends,deployment_name=Dev"}
-  tasks:
-    - name: Including role
-      include_role:
-        name: osp-servers
-      loop: "{{ vms_data }}"
-      loop_control:
-        loop_var: vm
+  roles:
+   - osp-servers
