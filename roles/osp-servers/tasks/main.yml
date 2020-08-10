@@ -7,7 +7,7 @@
     name: "{{ vm['name'] | default(omit) }}"
     image: "{{ vm['image'] | default('rhel-guest') }}"
     key_name: "{{ vm['key_name']| default('ansible_ssh') }}"
-    flavor: "{{ vm['flavor']| default('m2.small') }}"
+    flavor: "{{ vm['flavor']| default('m1.medium') }}"
     security_groups: "{{ vm['security_groups']| default(omit) }}"
     delete_fip: yes
     wait: no
