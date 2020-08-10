@@ -10,6 +10,7 @@
   service:
     name: "{{ app_server_service }}"
     enabled: yes
+    state: started
 
 - name: Create "{{ app_server_service }}" content directory
   file:
