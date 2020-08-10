@@ -10,7 +10,7 @@
 
 - name: enable repos
   template:
-    dest: /etc/yum.repos.d/internal_three-tier-app.repo
+    dest: "/etc/yum.repos.d/3tier.repo"
     src: repos_template.j2
     mode: 0644
 
