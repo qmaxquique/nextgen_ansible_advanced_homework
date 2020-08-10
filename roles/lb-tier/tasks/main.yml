@@ -5,7 +5,7 @@
     name: "{{ load_balancer_packages }}"
     state: present
 
-- name: Configure haproxy load balancing
+- name: Configure "{{ payload }}" load balancing
   template:
     src: haproxy.cfg.j2
     dest: /etc/haproxy/haproxy.cfg
@@ -13,6 +13,6 @@
 
 - name: Enable Haproxy
   service:
-    name: haproxy
+    name: "{{ payload }}"
     state: started
     enabled: true
