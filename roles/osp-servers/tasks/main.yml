@@ -28,5 +28,5 @@
     network: "{{ vm['ext_net-name']| default('ext_network') }}"
     wait: true
     timeout: 200
-  retries: 3
+  retries: 5
   delay: 10
