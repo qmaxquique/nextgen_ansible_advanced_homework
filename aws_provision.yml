@@ -5,7 +5,7 @@
   tasks:
     - name: Make sure python is in path in the workstation machine
       file:
-        path: /usr/bin/python2.7
+        src: /usr/bin/python2.7
         dest: /usr/bin/python
         state: link
     - name: create bin directory
