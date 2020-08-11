@@ -11,7 +11,7 @@
   tasks:
   - name: Register IP
     set_fact:
-      - frontend_ip: "{{ ansible_default_ipv4.address }}"
+      frontend_ip: "{{ ansible_default_ipv4.address }}"
   - debug:
       var: frontend_ip
   - name: Curl website
