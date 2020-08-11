@@ -23,6 +23,6 @@
 
   - name: Fail if 'Ansible has done its job' is not in the page content
     fail:
-    when: "'Ansible has done its job' not in response.results[0].cdeontent"
+    when: "'Ansible has done its job' not in response.content"
     tags:
       - osp.smoke
