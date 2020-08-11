@@ -9,11 +9,7 @@
 - hosts: frontends
   gather_facts: true
   tasks:
-  - name: Register IP
-    set_fact:
-      frontend_ip: "{{ inventory_hostname }}"
-  - debug:
-      var: frontend_ip
+
   - name: Curl website
     uri:
       url: "http://{{inventory_hostname}}"
@@ -27,6 +23,6 @@
 
   - name: Fail if 'Ansible has done its job' is not in the page content
     fail:
-    when: "'Ansible has done its job' not in webpage.results[0].cdeontent"
+    when: "'Ansible has done its job' not in response.results[0].cdeontent"
     tags:
       - osp.smoke
